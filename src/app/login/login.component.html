@@ -1,1 +1,32 @@
-<p>login</p>
+<div class="container">
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+        <div class="inputs">
+            <div class="input__email form-group">
+                <label for="email">Felhasználónév</label>
+                <input 
+                    type="email" 
+                    class="form-control"
+                    ngModel
+                    name="email"
+                    required
+                    email
+                />
+            </div>
+            <div class="input__password form-group">
+                <label for="password">Jelszó</label>
+                <input 
+                    type="password"
+                    class="form-control"
+                    ngModel
+                    name="password"
+                    required
+                    password
+                />
+            </div>
+            <div class="input__button">
+                <button type="submit" [disabled]="!authForm.valid">Belépés</button>
+            </div>
+        </div>
+    </form>
+                <button (click)="getCharacters()">getChar</button>
+</div>

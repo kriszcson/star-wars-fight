@@ -14,15 +14,16 @@ if (!process.env.API_KEY) {
 const targetPath = isProduction
     ? `./src/environments/environment.prod.ts`
     : `./src/environments/environment.ts`;
-// we have access to our environment variables
-// in the process.env object thanks to dotenv
+
 const environmentFileContent = `
 export const environment = {
    production: ${isProduction},
    API_KEY: "${process.env.API_KEY}",
+   BACKEND_URL:"${process.env.BACKEND_URL}"
 };
 `;
-// write the content to the respective file
+
+
 writeFile(targetPath, environmentFileContent, function (err: any) {
     if (err) {
         console.log(err);

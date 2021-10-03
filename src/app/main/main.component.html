@@ -1,0 +1,8 @@
+<swiper (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+    <ng-template swiperSlide>Slide 1</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
+    <ng-template swiperSlide>Slide 3</ng-template>
+</swiper>
+<div *ngFor="let char of (characters$ | async)" class="chars">
+    {{char.name}}
+</div>

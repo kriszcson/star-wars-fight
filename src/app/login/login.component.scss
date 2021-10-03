@@ -1,6 +1,101 @@
-
-p{
-    color:var(--yellow);
-    font-family: 'star-jedi';
-    font-size: 64px;
+html {
+    margin: 0;
+    background: url('../../assets/images/bg_1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% 100%;
+    overflow-x: hidden;
+    body {
+        margin: 0;
+        overflow-x: hidden;
+        .container {
+            height: 110vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+            flex-direction: column;
+            .company {
+                font-family: "star-jedi";
+                font-size: 30px;
+                color: var(--white);
+                margin-top: 10rem;
+            }
+            .frontend {
+                font-family: 'distant-galaxy';
+                font-size: 70px;
+                color: var(--white);
+                margin-top: 1rem;
+            }
+            .form {
+                &__email {
+                    margin-top: 5.8rem;
+                    &__label {
+                        label {
+                            color: var(--white);
+                            font-family: 'poppins-medium';
+                            letter-spacing: 0.1ch;
+                            font-size: 14px;
+                        }
+                    }
+                    &__input {
+                        margin-top: 0.2rem;
+                        input {
+                            text-align: center;
+                            width: 27rem;
+                            height: 2.7rem;
+                            font-family: 'poppins-regular';
+                            font-weight: 500;
+                            font-size: 16px;
+                            color: var(--black);
+                            border-radius: 0.6rem;
+                        }
+                    }
+                }
+                &__password {
+                    margin-top: 1.4rem;
+                    &__label {
+                        label {
+                            color: var(--white);
+                            font-family: 'poppins-medium';
+                            letter-spacing: 0.1ch;
+                            font-size: 14px;
+                        }
+                    }
+                    &__input {
+                        margin-top: 0.2rem;
+                        input {
+                            text-align: center;
+                            width: 27rem;
+                            height: 2.7rem;
+                            font-family: 'poppins-bold';
+                            font-weight: 500;
+                            color: var(--black);
+                            font-size: 16px;
+                            border-radius: 0.6rem;
+                        }
+                    }
+                }
+                &__button {
+                    margin-top: 2.2rem;
+                    button {
+                        background-color: var(--yellow);
+                        color: var(--black);
+                        font-size: 16px;
+                        font-family: 'poppins-extra';
+                        width: 16rem;
+                        height: 2.8rem;
+                        border-radius: 0.4rem;
+                    }
+                    button:hover {
+                        background-color: var(--white);
+                    }
+                    button:disabled {
+                        background-color: #ffbb0051;
+                    }
+                }
+            }
+        }
+    }
 }

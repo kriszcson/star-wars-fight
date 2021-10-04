@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, Subscription } from "rxjs";
+import { Observable } from "rxjs";
 import { exhaustMap, map, take, tap } from "rxjs/operators";
+
 import { environment } from "src/environments/environment";
 import { AuthService } from "../login/auth/auth.service";
 import { User } from "../login/auth/user.model";
@@ -16,7 +17,6 @@ export class CharacterService {
         private http: HttpClient,
         private readonly authService: AuthService
     ) { }
-
 
     getCharacters(): Observable<Character[]> {
         return this.authService.user.pipe(

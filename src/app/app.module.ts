@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { SwiperModule } from 'swiper/angular';
 
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -23,7 +23,7 @@ import { CharacterService } from './characters/characters.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SwiperModule
+    NgxUsefulSwiperModule
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]

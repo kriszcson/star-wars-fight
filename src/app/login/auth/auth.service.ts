@@ -34,7 +34,13 @@ export class AuthService {
             }),
             tap(resData => {
                 const expirationDate = new Date(new Date().getTime() + 3600000);
-                const user = new User(resData.user.email, resData.token, expirationDate);
+                const user = new User(
+                    resData.user.email,
+                    resData.user.firstName,
+                    resData.user.lastName,
+                    resData.token,
+                    expirationDate
+                );
                 this.user.next(user);
             }))
     }

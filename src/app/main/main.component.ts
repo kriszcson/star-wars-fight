@@ -2,14 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 
-import SwiperCore, { SwiperOptions, Navigation, Pagination } from 'swiper';
-
+import { swiperConfig } from './slider/config';
 import { Character } from '../characters/character.model';
 import { CharacterService } from '../characters/characters.service';
 import { AuthService } from '../login/auth/auth.service';
 
-
-SwiperCore.use([Navigation, Pagination]);
 
 @Component({
   selector: 'app-main',
@@ -18,17 +15,12 @@ SwiperCore.use([Navigation, Pagination]);
 })
 export class MainComponent implements OnInit {
 
-  private userSub = new Subscription();
+  userSub = new Subscription();
   isAuthenticated = false;
   characters$: Observable<Character[]>;
+  config = swiperConfig;
+  name: string | undefined = "";
 
-  config: SwiperOptions = {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    navigation: true,
-    pagination: { clickable: true },
-    scrollbar: { draggable: true },
-  };
 
   constructor(
     private readonly router: Router,
@@ -36,23 +28,14 @@ export class MainComponent implements OnInit {
     private readonly characterService: CharacterService,
   ) {
     this.characters$ = this.characterService.getCharacters();
-    this.characters$.subscribe((data) => {
-      console.log(data);
-    })
   }
 
   ngOnInit(): void {
     this.userSub = this.authServie.user.subscribe(user => {
+      // if (!this.isAuthenticated) this.router.navigate(['/login']);
       this.isAuthenticated = !!user;
+      this.name = user?.lastName + " " + user?.firstName;
     })
-    // if (!this.isAuthenticated) this.router.navigate(['/login']);
-  }
-
-  onSwiper(swiper: any) {
-    console.log(swiper);
-  }
-  onSlideChange() {
-    console.log('slide change');
   }
 
 }

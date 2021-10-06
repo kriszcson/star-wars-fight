@@ -1,0 +1,206 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    &__headline {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        &__text {
+            font-family: 'poppins-black';
+            font-size: 24px;
+        }
+        &__switch {
+            display: inline-flex;
+            img:hover {
+                border-radius: 100%;
+                background-color: var(--red);
+            }
+            &__right-arrow {
+                img {
+                    transform: rotate(180deg)
+                }
+            }
+            &__left-arrow {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+    &__body {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+        margin-top: 1rem;
+        &__left {
+            width: 50%;
+            &__prop {
+                &__side {
+                    display: flex;
+                    flex-direction: row;
+                    &__logo {
+                        width: 2.3rem;
+                        height: 2.3rem;
+                        background-color: var(--black);
+                        border: 0.45rem solid var(--white);
+                    }
+                    &__text {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 1.3rem;
+                        font-size: 16px;
+                        &__type {
+                            color: var(--yellow);
+                            font-family: 'poppins-bold';
+                        }
+                        &__value {
+                            color: var(--white);
+                            font-size: 20px;
+                            font-family: 'poppins-black';
+                        }
+                    }
+                }
+                &__power {
+                    display: flex;
+                    margin-top: 3rem;
+                    &__logo {
+                        width: 3.2rem;
+                        height: 3.2rem;
+                        background-color: var(--yellow);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    &__text {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        margin-left: 1.3rem;
+                        &__type {
+                            color: var(--yellow);
+                            font-family: 'poppins-bold';
+                        }
+                        &__value {
+                            color: var(--white);
+                            font-size: 20px;
+                            font-family: 'poppins-black';
+                        }
+                    }
+                }
+            }
+            &__name {
+                margin-top: 3rem;
+                font-family: 'star-jedi';
+                font-size: 90px;
+                letter-spacing: 0.15ch;
+                line-height: 1.4ch;
+            }
+            &__btn {
+                margin-top: 2.2rem;
+                button {
+                    height: 3rem;
+                    width: 16rem;
+                    border: 2px solid var(--yellow);
+                    border-radius: 4px;
+                    background-color: inherit;
+                    color: var(--white);
+                    font-size: 16px;
+                    font-family: 'poppins-bold';
+                }
+                button:hover {
+                    background-color: #434141;
+                }
+                button:disabled {
+                    border-color: var(--red);
+                    color: var(--red);
+                }
+                button:disabled:hover {
+                    background-color: inherit;
+                }
+            }
+            &__desc {
+                margin-top: 3rem;
+                &__heading {
+                    display: flex;
+                    flex-direction: row;
+                    &__logo {
+                        height: 1.3rem;
+                        width: 1.3rem;
+                        background-color: var(--yellow);
+                    }
+                    &__text {
+                        display: flex;
+                        align-items: center;
+                        margin-left: 0.7rem;
+                        color: var(--white);
+                        font-size: 16px;
+                        font-family: 'poppins-bold';
+                    }
+                }
+                &__text {
+                    margin-top: 1rem;
+                    font-size: 16px;
+                    font-family: 'poppins-regular';
+                    float: none
+                }
+            }
+        }
+        &__right {
+            width: 40%;
+            position: relative;
+            margin-left: 10%;
+            .background-circle {
+                width: 25rem;
+                height: 25rem;
+                top: 80px;
+                right: 0;
+                position: absolute;
+                border-radius: 100%;
+                background-color: var(--yellow);
+                z-index: -1;
+            }
+            &__image {
+                display: inline-flex;
+                &__slide {
+                    height: 30%;
+                    width: 30%;
+                    img {
+                        height: 35rem;
+                        width: 35rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bottom {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &__btn {
+        button {
+            background: linear-gradient(90deg, var(--blue) 0%, var(--red) 100%);
+            height: 3rem;
+            width: 20rem;
+            border-radius: 4px;
+            color: var(--black);
+            font-family: 'star-jedi';
+            font-size: 20px;
+            float: right;
+        }
+        button:hover {
+            background: var(--yellow);
+        }
+        button:disabled {
+            background: inherit;
+            color: var(--red);
+            border-color: var(--red);
+        }
+    }
+}

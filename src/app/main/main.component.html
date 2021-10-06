@@ -12,67 +12,7 @@
             </div>
         </div>
 
-        <div class="main">
-            <div class="main__headline">
-                <div class="main__headline__text">Válassz két harcost az ellenkező oldalakból!</div>
-                <div class="main__headline__switch">
-                    <div class="main__headline__switch__switch-dots"></div>
-                    <div class="main__headline__switch__left-arrow swiper-button-prev">
-                        <img src="../../assets/icons/arrow_circle.png" alt="" (click)="indexMinus()"></div>
-                    <div class="main__headline__switch__right-arrow swiper-button-next">
-                        <img src="../../assets/icons/arrow_circle.png" alt="" (click)="indexPlus()"></div>
-                </div>
-            </div>
-            <div class="main__body">
-                <div class="main__body__left">
-                    <div class="main__body__left__prop">
-                        <div class="main__body__left__prop__side">
-                            <div class="main__body__left__prop__side__logo" [ngStyle]="{'background-color': (actualChar | async)?.side=='DARK'? 'dark' : 'white' } "></div>
-                            <div class="main__body__left__prop__side__text">
-                                <div class="main__body__left__prop__side__text__type">OLDAL</div>
-                                <div class="main__body__left__prop__side__text__value">
-                                    {{(actualChar | async)?.side=='DARK'? 'Sötét' : 'Világos'}}</div>
-                            </div>
-                        </div>
-                        <div class="main__body__left__prop__power">
-                            <div class="main__body__left__prop__power__logo">
-                                <img src="../../assets/icons/star.svg" alt="">
-                            </div>
-                            <div class="main__body__left__prop__power__text">
-                                <div class="main__body__left__prop__power__text__type">KÜLÖNLEGES ERŐ</div>
-                                <div class="main__body__left__prop__power__text__value"> {{ (actualChar | async)?.power}}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main__body__left__name" [innerHTML]="(actualChar | async)?.name"></div>
-                    <div class="main__body__left__btn"><button (click)="selectChar()" [disabled]="selectedNotValid()">Kiválasztom</button></div>
-                    <div class="main__body__left__desc">
-                        <div class="main__body__left__desc__heading">
-                            <div class="main__body__left__desc__heading__logo"></div>
-                            <div class="main__body__left__desc__heading__text">LEÍRÁS</div>
-                        </div>
-                        <div class="main__body__left__desc__text"> {{(actualChar | async)?.description}}</div>
-                    </div>
-                </div>
-                <div class="main__body__right">
-                    <div class="background-circle">
-                    </div>
-                    <swiper [config]="config">
-                        <div class="main__body__right__image swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="main__body__right__image__slide swiper-slide" *ngFor="let char of (characters$ | async);">
-                                <img src="../../assets/images/characters/{{char.id}}.png" alt="">
-                            </div>
-                        </div>
-                    </swiper>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="bottom">
-        <div class="bottom__btn"><button (click)="start()" [disabled]="!choosenLight || !choosenDark">küzdelem szimulálása</button>
-            <div class="copyright">Webstar csoport Kft. - &#169; Minden jog fenntartva</div>
-        </div>
+        <app-select *ngIf="!started && fetched" [characters]="characters"></app-select>
+        <app-game *ngIf="started"></app-game>
     </div>
 </div>

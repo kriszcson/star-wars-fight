@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { CharacterService } from './characters/characters.service';
-import { GameComponent } from './game/game.component';
+import { GameComponent } from './main/game/game.component';
+import { SelectComponent } from './main/select/select.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { GameComponent } from './game/game.component';
     AppComponent,
     LoginComponent,
     MainComponent,
-    GameComponent
+    GameComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+<div class="game" *ngIf="simulationID">
+
+    <div class="game__heading">A tudás legyen veled</div>
+    <div class="game__main">
+        <div class="game__main__left">
+            <div class="game__main__left__text">{{getSide(selectedChars[0])}} oldal</div>
+            <div class="game__main__left__character">
+                <div class="game__main__left__character__circle"></div>
+                <div class="game__main__left__character__img"><img src="../../../assets/images/characters/{{selectedChars[0].id}}.png" alt=""></div>
+            </div>
+            <div class="game__main__left__name" [innerHTML]="getNameWithoutHtml(selectedChars[0]).toLowerCase()"></div>
+            <div class=" game__main__left__stat">
+                <div class="game__main__left__stat__stripe "></div>
+                <div class="game__main__left__stat__percent "></div>
+            </div>
+        </div>
+
+        <div class="game__main__middle ">VS</div>
+
+        <div class="game__main__right">
+            <div class="game__main__right__text">{{getSide(selectedChars[1])}} oldal</div>
+            <div class="game__main__right__character">
+                <div class="game__main__right__character__circle"></div>
+                <div class="game__main__right__character__img "><img src="../../../assets/images/characters/{{selectedChars[1].id}}.png " alt=" "></div>
+            </div>
+            <div class="game__main__right__name " [innerHTML]="getNameWithoutHtml(selectedChars[1]).toLowerCase()"></div>
+            <div class=" game__main__right__stat ">
+                <div class="game__main__right__stat__stripe "></div>
+                <div class="game__main__right__stat__percent "></div>
+            </div>
+        </div>
+    </div>

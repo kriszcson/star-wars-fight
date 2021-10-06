@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngStyle]="{'background-image': 'url(' +getBgImageSrc()+ ')'}">
     <div class="wrapper">
 
         <div class="header">
@@ -12,7 +12,8 @@
             </div>
         </div>
 
-        <app-select *ngIf="!started && fetched" [characters]="characters"></app-select>
-        <app-game *ngIf="started"></app-game>
+        <app-select *ngIf="!started && fetched" [characters]="characters" (characterEmitter)="getFightingCharsAndStart($event)"></app-select>
+        <app-game *ngIf="started && selectedChars.length==2" [selectedChars]="selectedChars"></app-game>
+
     </div>
 </div>

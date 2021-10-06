@@ -26,11 +26,11 @@
                     </div>
                     <div class="main__body__left__prop__power__text">
                         <div class="main__body__left__prop__power__text__type">KÜLÖNLEGES ERŐ</div>
-                        <div class="main__body__left__prop__power__text__value"> {{ characters[charIndex].side}}</div>
+                        <div class="main__body__left__prop__power__text__value"> {{ characters[charIndex].power}}</div>
                     </div>
                 </div>
             </div>
-            <div class="main__body__left__name" [innerHTML]="characters[charIndex].name"></div>
+            <div class="main__body__left__name" [innerHTML]="characters[charIndex].name.toLowerCase()"></div>
             <div class="main__body__left__btn"><button (click)="selectChar()" [disabled]="selectedNotValid()">Kiválasztom</button></div>
             <div class="main__body__left__desc">
                 <div class="main__body__left__desc__heading">

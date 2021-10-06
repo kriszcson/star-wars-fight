@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Character, Side } from 'src/app/characters/character.model';
 import { swiperConfig } from '../slider/config';
+
 
 @Component({
   selector: 'app-select',
@@ -16,7 +17,7 @@ export class SelectComponent {
   charIndex = 0;
   choosenDark: Character | null = null;
   choosenLight: Character | null = null;
-  @Output() outputFromChild : EventEmitter<string> = new EventEmitter();
+  @Output() characterEmitter: EventEmitter<Character[]> = new EventEmitter();
   started = false;
 
   constructor() { }
@@ -44,5 +45,8 @@ export class SelectComponent {
     this.charIndex--;
   }
 
-  start() { }
+  start() {
+    let fightingCharacters: Character[] = [this.choosenDark || this.characters[0], this.choosenLight || this.characters[7]];
+    this.characterEmitter.emit(fightingCharacters);
+  }
 }

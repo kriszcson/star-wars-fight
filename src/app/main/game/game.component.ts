@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Character, Side } from 'src/app/characters/character.model';
+import { SimulationService } from 'src/app/simulation/simulation.service';
 
 @Component({
   selector: 'app-game',
@@ -7,10 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  @Input('selectedChars') selectedChars: Character[];
+
+  simulationID: string;
+
+
+  constructor(
+    private readonly simulationService: SimulationService
+  ) { }
 
   ngOnInit(): void {
-    console.log(history.state);
+    this.simulationService.getSimulation(this.selectedChars).subscribe((data: any) => {
+      this.simulationID = data;
+    })
+  }
+
+  getNameWithoutHtml(char: Character) {
+    return char.name.replace('<br>', ' ')
+  }
+
+  getSide(char: Character) {
+    return char.side == Side.DARK ? 'Sötét' : 'Világos';
   }
 
 }

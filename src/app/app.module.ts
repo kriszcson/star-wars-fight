@@ -12,6 +12,7 @@ import { MainComponent } from './main/main.component';
 import { CharacterService } from './characters/characters.service';
 import { GameComponent } from './main/game/game.component';
 import { SelectComponent } from './main/select/select.component';
+import { SimulationService } from './simulation/simulation.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { SelectComponent } from './main/select/select.component';
     HttpClientModule,
     NgxUsefulSwiperModule
   ],
-  providers: [CharacterService],
+  providers: [CharacterService, SimulationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

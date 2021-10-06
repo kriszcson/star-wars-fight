@@ -20,6 +20,7 @@ export class MainComponent implements OnInit {
   started = false;
   fetched = false;
   charIndex = 0;
+  selectedChars: Character[] = [];
 
   constructor(
     private readonly router: Router,
@@ -41,7 +42,16 @@ export class MainComponent implements OnInit {
     });
   }
 
-  start() {
+  getFightingCharsAndStart(selected: Character[]) {
+    this.selectedChars = selected;
     this.started = true;
+  }
+
+  getBgImageSrc(): string {
+    if (!this.started) {
+      return "../../assets/images/background/bg_2.jpg";
+    } else {
+      return "../../assets/images/background/bg_3.jpg"
+    }
   }
 }

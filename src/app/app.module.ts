@@ -13,6 +13,7 @@ import { CharacterService } from './characters/characters.service';
 import { GameComponent } from './main/game/game.component';
 import { SelectComponent } from './main/select/select.component';
 import { SimulationService } from './simulation/simulation.service';
+import { WinnerComponent } from './main/winner/winner.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SimulationService } from './simulation/simulation.service';
     LoginComponent,
     MainComponent,
     GameComponent,
-    SelectComponent
+    SelectComponent,
+    WinnerComponent
   ],
   imports: [
     BrowserModule,

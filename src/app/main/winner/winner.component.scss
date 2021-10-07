@@ -1,0 +1,60 @@
+.winner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    &__title {
+        font-size: 60px;
+        text-align: center;
+        color: var(--white);
+        font-family: 'star-jedi';
+    }
+    &__character {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        &__circle {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 2rem;
+            text-align: center;
+            background-color: var(--darkgrey);
+            width: 30rem;
+            height: 30rem;
+            border-radius: 100%;
+            z-index: -1;
+        }
+        &__img {
+            margin-top: 1rem;
+            img {
+                width: 30rem;
+            }
+        }
+    }
+    &__name {
+        font-size: 40px;
+        text-align: center;
+        color: var(--white);
+        font-family: 'star-jedi';
+    }
+    &__btn {
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 20rem;
+            height: 3rem;
+            font-family: "poppins-bold";
+            text-align: center;
+            background-color: var(--yellow);
+            font-size: 16px;
+            border-radius: 12px;
+            color: var(--black);
+            margin-top: 3rem;
+        }
+    }
+}

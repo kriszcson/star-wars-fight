@@ -1,0 +1,13 @@
+<div class="winner">
+    <div class="winner__title">A CSATA NYERTESE</div>
+    <div class="winner__character">
+        <div class="winner__character__circle"></div>
+        <div class="winner__character__img">
+            <img src="../../../assets/images/characters/{{winnerChar.id}}.png " alt=" ">
+        </div>
+    </div>
+    <div class="winner__name" [innerHTML]="winnerChar.name.replace('<br>', ' ').toLowerCase()"></div>
+    <div class="winner__btn">
+        <button (click)="returnToSelection()">Vissza a fedélzetre</button>
+    </div>
+</div>

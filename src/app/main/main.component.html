@@ -13,7 +13,8 @@
         </div>
 
         <app-select *ngIf="!started && fetched" [characters]="characters" (characterEmitter)="getFightingCharsAndStart($event)"></app-select>
-        <app-game *ngIf="started && selectedChars.length==2" [selectedChars]="selectedChars"></app-game>
+        <app-game *ngIf="started && selectedChars.length==2 && !winnerChar" [selectedChars]="selectedChars" (winnerCharcharacterEmitter)="getWinnerCharacter($event)"></app-game>
+        <app-winner *ngIf=" winnerChar" [winnerChar]="winnerChar"></app-winner>
 
     </div>
 </div>

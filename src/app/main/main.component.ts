@@ -21,6 +21,7 @@ export class MainComponent implements OnInit {
   fetched = false;
   charIndex = 0;
   selectedChars: Character[] = [];
+  winnerChar: Character;
 
   constructor(
     private readonly router: Router,
@@ -53,5 +54,9 @@ export class MainComponent implements OnInit {
     } else {
       return "../../assets/images/background/bg_3.jpg"
     }
+  }
+
+  getWinnerCharacter(char: Character) {
+    this.winnerChar = char;
   }
 }

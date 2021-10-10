@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Character, Side } from '../characters/character.model';
+
+import { Character } from '../characters/character.model';
 import { CharacterService } from '../characters/characters.service';
 
 
@@ -28,7 +29,7 @@ export class MainComponent implements OnInit {
     })
   }
 
-  getFightingCharsAndStart(selected: Character[]) {
+  getFightingCharsAndStart(selected: Character[]): void {
     this.selectedChars = selected;
     this.started = true;
   }
@@ -41,7 +42,7 @@ export class MainComponent implements OnInit {
     }
   }
 
-  getWinnerCharacter(char: Character) {
+  getWinnerCharacter(char: Character): void {
     this.winnerChar = char;
   }
 }

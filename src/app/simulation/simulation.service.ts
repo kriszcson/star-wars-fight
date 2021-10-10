@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { exhaustMap, map, take, tap } from "rxjs/operators";
+import { exhaustMap, take, tap } from "rxjs/operators";
 
 import { AuthService } from "../login/auth/auth.service";
 import { User } from "../login/auth/models/user.model";

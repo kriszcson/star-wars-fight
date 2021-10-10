@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { Character, Side } from 'src/app/characters/character.model';
 import { swiperConfig } from '../slider/config';
 
@@ -27,26 +28,26 @@ export class SelectComponent {
   }
 
 
-  selectChar() {
+  selectChar(): void {
     this.characters[this.charIndex].side == Side.DARK ?
       this.choosenDark = this.characters[this.charIndex]
       : this.choosenLight = this.characters[this.charIndex]
   }
 
-  selectedNotValid() {
+  selectedNotValid(): boolean | null {
     return (this.choosenDark && this.charIndex < 6)
       || (this.choosenLight && this.charIndex > 5);
   }
 
-  indexPlus() {
+  indexPlus(): void {
     this.charIndex++;
   }
 
-  indexMinus() {
+  indexMinus(): void {
     this.charIndex--;
   }
 
-  start() {
+  start(): void {
     let fightingCharacters: Character[] = [this.choosenDark || this.characters[0], this.choosenLight || this.characters[7]];
     this.characterEmitter.emit(fightingCharacters);
   }

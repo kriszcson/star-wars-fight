@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
+
 import { Character, Side } from 'src/app/characters/character.model';
 import { SimulationService } from 'src/app/simulation/simulation.service';
 
@@ -43,7 +43,7 @@ export class GameComponent implements OnInit {
     })
   }
 
-  randomIntFromInterval() {
+  randomIntFromInterval(): void {
     const randomDamage = Math.floor(Math.random() * 25 + 1);
 
     Math.floor(Math.random() * 2 + 1) == 1 ?
@@ -55,7 +55,7 @@ export class GameComponent implements OnInit {
   }
 
 
-  getNameWithoutHtml(char: Character) {
+  getNameWithoutHtml(char: Character): string {
     return char.name.replace('<br>', ' ')
   }
 
@@ -63,7 +63,7 @@ export class GameComponent implements OnInit {
     return char.side == Side.DARK ? 'Sötét' : 'Világos';
   }
 
-  getHpNgStyle(side: string) {
+  getHpNgStyle(side: string): object {
     return {
       'width':
         side == 'left' ?
@@ -72,7 +72,7 @@ export class GameComponent implements OnInit {
     };
   }
 
-  getMarginForPercent(side: string) {
+  getMarginForPercent(side: string): object {
     return {
       [`margin-${side}`]: side == 'left' ? ` ${100 - this.leftCharHP}%` : ` ${100 - this.rightCharHp}%`
     };

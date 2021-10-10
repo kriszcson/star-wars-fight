@@ -72,4 +72,10 @@ export class GameComponent implements OnInit {
     };
   }
 
+  getMarginForPercent(side: string) {
+    return {
+      [`margin-${side}`]: side == 'left' ? ` ${100 - this.leftCharHP}%` : ` ${100 - this.rightCharHp}%`
+    };
+  }
+
 }

@@ -1,20 +1,14 @@
 <div class="container" [ngStyle]="{'background-image': 'url(' +getBgImageSrc()+ ')'}">
     <div class="wrapper">
 
-        <div class="header">
-            <div class="header__user">
-                <div class="header__user__logo"><img src="../../assets/icons/user.svg" alt=""></div>
-                <div class="header__user__name">{{name}}</div>
-            </div>
-            <div class="header__logout">
-                <div class="header__logout__text">Űrhajó elhagyása</div>
-                <div class="header__logout__logo"><img src="../../assets/icons/logout.svg" alt=""></div>
-            </div>
-        </div>
+        <app-header></app-header>
 
-        <app-select *ngIf="!started && fetched" [characters]="characters" (characterEmitter)="getFightingCharsAndStart($event)"></app-select>
+        <app-select *ngIf="!started && fetched" [characters]="characters" (characterEmitter)="getFightingCharsAndStart($event)">
+        </app-select>
         <app-game *ngIf="started && selectedChars.length==2 && !winnerChar" [selectedChars]="selectedChars" (winnerCharcharacterEmitter)="getWinnerCharacter($event)"></app-game>
         <app-winner *ngIf=" winnerChar" [winnerChar]="winnerChar"></app-winner>
 
+
+        <app-footer></app-footer>
     </div>
 </div>

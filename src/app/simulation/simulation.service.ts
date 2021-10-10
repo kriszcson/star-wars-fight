@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { exhaustMap, map, take, tap } from "rxjs/operators";
 
 import { AuthService } from "../login/auth/auth.service";
-import { User } from "../login/auth/user.model";
+import { User } from "../login/auth/models/user.model";
 import { environment } from "src/environments/environment";
 import { Character, Side } from "../characters/character.model";
 
@@ -31,7 +31,6 @@ export class SimulationService {
                     .set('Content-Type', 'application/json')
                     .set('Content-Encoding', 'gzip')
                     .set('Applicant-Id', `${environment.API_KEY}`)
-                    .set('Application-Authorization', `Bearer ${user?.token}`);
                 return this.http.post<any>(
                     `simulate`, characters, { headers }
                 );

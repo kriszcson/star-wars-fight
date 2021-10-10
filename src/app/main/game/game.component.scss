@@ -1,173 +1,254 @@
-.game {
-    width: 100%;
-    &__heading {
-        display: flex;
-        justify-content: center;
-        font-size: 60px;
-        font-family: 'star-jedi';
-        color: var(--white);
-        margin-top: 2rem;
-    }
-    &__main {
-        display: flex;
-        flex-wrap: wrap;
+    .game {
         width: 100%;
-        height: 80rem;
-        margin: 0 auto;
-        justify-content: center;
-        &__left {
-            flex: 1 0 33%;
-            &__text {
-                font-family: 'poppins-black';
-                font-size: 24px;
-                color: var(--white);
-                margin-top: 4rem;
-                text-align: center;
-            }
-            &__character {
-                position: relative;
-                display: flex;
-                justify-content: center;
-                &__circle {
-                    position: absolute;
-                    margin-left: auto;
-                    margin-right: auto;
-                    left: 0;
-                    right: 0;
-                    top: 2rem;
-                    text-align: center;
-                    background-color: var(--white);
-                    width: 20rem;
-                    height: 20rem;
-                    border-radius: 100%;
-                    z-index: -1;
-                }
-                &__img {
-                    margin-top: 1rem;
-                    img {
-                        width: 100%;
-                        -webkit-transform: scaleX(-1);
-                        transform: scaleX(-1);
-                    }
-                }
-            }
-            &__name {
-                font-family: 'star-jedi';
-                font-size: 40px;
-                color: var(--white);
-            }
-            &__stat {
-                width: 100%;
-                height: 1.3rem;
-                border-radius: 12px;
-                &__stripe {
-                    width: 100%;
-                    height: 100%;
-                    &__bg {
-                        width: 100%;
-                        height: 100%;
-                        background-color: var(--white);
-                        position: relative;
-                        z-index: -1;
-                        &__value {
-                            position: absolute;
-                            background-color: var(--red);
-                            top: 0;
-                            right: 0;
-                            height: 100%;
-                            z-index: 1;
-                        }
-                    }
-                }
-                &__percent {
-                    text-align: center;
-                    margin-left: 50%;
-                    font-size: 24px;
-                    font-family: 'poppins-bold';
-                    color: var(--white);
-                }
-            }
-        }
-        &__middle {
-            flex: 1 0 33%;
-            text-align: center;
-            font-family: 'distant-galaxy';
-            font-size: 150px;
-            color: var(--white);
-            margin-top: 17rem;
-        }
-        &__right {
+        &__heading {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1 0 33%;
-            &__text {
-                font-family: 'poppins-black';
-                font-size: 24px;
-                color: var(--white);
-                margin-top: 4rem;
-                text-align: center;
-            }
-            &__character {
-                position: relative;
-                &__circle {
-                    position: absolute;
-                    margin-left: auto;
-                    margin-right: auto;
-                    left: 0;
-                    right: 0;
-                    top: 2rem;
-                    background-color: var(--yellow);
-                    width: 20rem;
-                    height: 20rem;
-                    border-radius: 100%;
-                    z-index: -1;
+            justify-content: center;
+            font-size: 60px;
+            font-family: 'star-jedi';
+            color: var(--white);
+            margin-top: 2rem;
+        }
+        &__main {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 80rem;
+            margin: 0 auto;
+            justify-content: center;
+            &__left {
+                flex: 1 0 33%;
+                &__text {
+                    font-family: 'poppins-black';
+                    font-size: 24px;
+                    color: var(--white);
+                    margin-top: 4rem;
+                    text-align: center;
                 }
-                &__img {
-                    margin-top: 1rem;
-                    img {
-                        width: 100%;
-                    }
-                }
-            }
-            &__name {
-                margin-right: 0;
-                margin-left: auto;
-                font-family: 'star-jedi';
-                font-size: 40px;
-                color: var(--white);
-            }
-            &__stat {
-                width: 100%;
-                height: 1.3rem;
-                border-radius: 12px;
-                &__stripe {
-                    width: 100%;
-                    height: 100%;
-                    &__bg {
-                        width: 100%;
-                        height: 100%;
+                &__character {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    &__circle {
+                        position: absolute;
+                        margin-left: auto;
+                        margin-right: auto;
+                        left: 0;
+                        right: 0;
+                        top: 2rem;
+                        text-align: center;
                         background-color: var(--white);
-                        position: relative;
+                        width: 20rem;
+                        height: 20rem;
+                        border-radius: 100%;
                         z-index: -1;
-                        &__value {
-                            position: absolute;
-                            background-color: var(--yellow);
-                            top: 0;
-                            left: 0;
-                            height: 100%;
-                            z-index: 1;
+                    }
+                    &__img {
+                        margin-top: 1rem;
+                        img {
+                            width: 100%;
+                            -webkit-transform: scaleX(-1);
+                            transform: scaleX(-1);
                         }
                     }
                 }
-                &__percent {
-                    text-align: center;
-                    margin-left: 50%;
-                    font-size: 24px;
-                    font-family: 'poppins-bold';
+                &__name {
+                    font-family: 'star-jedi';
+                    font-size: 40px;
                     color: var(--white);
+                }
+                &__stat {
+                    width: 100%;
+                    height: 1.3rem;
+                    border-radius: 12px;
+                    &__stripe {
+                        width: 100%;
+                        height: 100%;
+                        &__bg {
+                            width: 100%;
+                            height: 100%;
+                            background-color: var(--white);
+                            position: relative;
+                            z-index: -1;
+                            &__value {
+                                position: absolute;
+                                background-color: var(--red);
+                                top: 0;
+                                right: 0;
+                                height: 100%;
+                                z-index: 1;
+                            }
+                        }
+                    }
+                    &__percent {
+                        margin-left: 0;
+                        margin-right: auto;
+                        font-size: 24px;
+                        font-family: 'poppins-bold';
+                        color: var(--white);
+                    }
+                }
+            }
+            &__middle {
+                flex: 1 0 33%;
+                text-align: center;
+                font-family: 'distant-galaxy';
+                font-size: 150px;
+                color: var(--white);
+                margin-top: 14rem;
+            }
+            &__right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex: 1 0 33%;
+                &__text {
+                    font-family: 'poppins-black';
+                    font-size: 24px;
+                    color: var(--white);
+                    margin-top: 4rem;
+                    text-align: center;
+                }
+                &__character {
+                    position: relative;
+                    &__circle {
+                        position: absolute;
+                        margin-left: auto;
+                        margin-right: auto;
+                        left: 0;
+                        right: 0;
+                        top: 2rem;
+                        background-color: var(--yellow);
+                        width: 20rem;
+                        height: 20rem;
+                        border-radius: 100%;
+                        z-index: -1;
+                    }
+                    &__img {
+                        margin-top: 1rem;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+                &__name {
+                    margin-right: 0;
+                    margin-left: auto;
+                    font-family: 'star-jedi';
+                    font-size: 40px;
+                    color: var(--white);
+                }
+                &__stat {
+                    width: 100%;
+                    height: 1.3rem;
+                    border-radius: 12px;
+                    &__stripe {
+                        width: 100%;
+                        height: 100%;
+                        &__bg {
+                            width: 100%;
+                            height: 100%;
+                            background-color: var(--white);
+                            position: relative;
+                            z-index: -1;
+                            &__value {
+                                position: absolute;
+                                background-color: var(--yellow);
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                z-index: 1;
+                            }
+                        }
+                    }
+                    &__percent {
+                        text-align: right;
+                        margin-right: 0;
+                        margin-left: auto;
+                        font-size: 24px;
+                        font-family: 'poppins-bold';
+                        color: var(--white);
+                    }
                 }
             }
         }
     }
-}
+    
+    @media screen and (max-width: 1024px) {
+        .game {
+            max-width: 100%;
+            width: 1024px;
+            margin: 0 auto;
+            &__heading {
+                max-width: 100%;
+                width: 1024px;
+                margin: 0 auto;
+                text-align: center;
+                margin-top: 1rem;
+                font-size: 48px;
+            }
+            &__main {
+                flex-direction: row;
+                margin: auto;
+                margin-top: 2rem;
+                &__left {
+                    justify-content: left;
+                    margin-left: -3rem;
+                    margin-right: 5rem;
+                    flex: 0 0 20%;
+                    &__name {
+                        margin-top: 1rem;
+                        font-size: 28px;
+                        margin-left: 0;
+                        margin-right: 0;
+                        text-align: center;
+                    }
+                    &__character {
+                        &__img {
+                            img {
+                                width: 20rem;
+                            }
+                        }
+                    }
+                    &__stat {
+                        width: 70%;
+                        margin: 0 auto;
+                        &__stripe {
+                            &__bg {
+                                &__value {}
+                            }
+                        }
+                    }
+                }
+                &__middle {
+                    flex: 0;
+                    font-size: 0;
+                }
+                &__right {
+                    flex: 0 0 30%;
+                    &__name {
+                        margin-top: 1rem;
+                        font-size: 28px;
+                        margin-left: 0;
+                        margin-right: 0;
+                        text-align: center;
+                    }
+                    &__character {
+                        &__img {
+                            img {
+                                width: 20rem;
+                            }
+                        }
+                    }
+                    &__stat {
+                        width: 70%;
+                        margin: 0 auto;
+                        &__stripe {
+                            &__bg {
+                                &__value {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

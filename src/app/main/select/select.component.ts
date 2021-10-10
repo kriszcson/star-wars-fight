@@ -37,6 +37,7 @@ export class SelectComponent {
     return (this.choosenDark && this.charIndex < 6)
       || (this.choosenLight && this.charIndex > 5);
   }
+
   indexPlus() {
     this.charIndex++;
   }

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
@@ -14,6 +14,11 @@ import { GameComponent } from './main/game/game.component';
 import { SelectComponent } from './main/select/select.component';
 import { SimulationService } from './simulation/simulation.service';
 import { WinnerComponent } from './main/winner/winner.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AuthInterceptor } from './login/auth/auth.interceptor';
+import { AuthGuard } from './login/auth/auth.guard';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
 
 
 @NgModule({
@@ -23,16 +28,24 @@ import { WinnerComponent } from './main/winner/winner.component';
     MainComponent,
     GameComponent,
     SelectComponent,
-    WinnerComponent
+    WinnerComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxUsefulSwiperModule
+    NgxUsefulSwiperModule,
+    ReactiveFormsModule
   ],
-  providers: [CharacterService, SimulationService],
+  providers: [AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, CharacterService, SimulationService, FormBuilder,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

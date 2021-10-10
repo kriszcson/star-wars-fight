@@ -3,7 +3,7 @@ import { SwiperOptions } from "swiper";
 export const swiperConfig: SwiperOptions = {
     pagination: {
         el: '.swiper-pagination',
-        clickable: true
+        clickable: false
     },
     navigation: {
         nextEl: '.swiper-button-next',

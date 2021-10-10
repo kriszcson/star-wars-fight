@@ -15,7 +15,7 @@
                         <div class="game__main__left__stat__stripe__bg__value" [ngStyle]="getHpNgStyle('left')"></div>
                     </div>
                 </div>
-                <div class="game__main__left__stat__percent ">{{leftCharHP}}%</div>
+                <div class="game__main__left__stat__percent " [ngStyle]="getMarginForPercent('left')">{{leftCharHP}}%</div>
             </div>
         </div>
 
@@ -34,7 +34,7 @@
                         <div class="game__main__right__stat__stripe__bg__value " [ngStyle]="getHpNgStyle('right')"></div>
                     </div>
                 </div>
-                <div class="game__main__right__stat__percent ">{{rightCharHp}}%</div>
+                <div class="game__main__right__stat__percent " [ngStyle]="getMarginForPercent('right')">{{rightCharHp}}%</div>
             </div>
         </div>
     </div>

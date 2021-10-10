@@ -4,16 +4,13 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100vh;
     min-height: 100%;
-    min-width: 1024px;
     width: 100%;
     height: auto;
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
-    align-items: center;
     text-align: center;
     margin: 0 auto;
     flex-direction: column;
@@ -97,13 +94,32 @@
             }
         }
     }
+    .error {
+        height: 3rem;
+        color: var(--white);
+        font-family: 'poppins-medium';
+        letter-spacing: 0.1ch;
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
-    /* Specific to this particular image */
-    img.bg {
-        left: 50%;
-        margin-left: -512px;
-        /* 50% */
+    .company {
+        margin-top: 20rem !important;
+    }
+    input {
+        width: 30rem !important;
+    }
+}
+
+@media screen and (max-width: 812px) {
+    .frontend {
+        font-size: 52px !important;
+    }
+    .company {
+        margin-top: 10rem !important;
+    }
+    input {
+        width: 20rem !important;
     }
 }

@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { AuthResponseData } from './auth/auth-response-data.interface';
 
 import { AuthService } from './auth/auth.service';
+import { ErrorObject } from './auth/models/error.model';
 
 
 @Component({
@@ -15,28 +14,43 @@ import { AuthService } from './auth/auth.service';
 
 export class LoginComponent implements OnInit {
 
-  authObs = new Observable<AuthResponseData>();
+  signinForm: FormGroup;
+  error: string | null = null;
 
   constructor(
-    private readonly authServie: AuthService,
-    private router: Router
+    private readonly authService: AuthService,
+    private readonly router: Router
   ) { }
 
   ngOnInit(): void {
+    this.signinForm = new FormGroup({
+      email: new FormControl(),
+      password: new FormControl()
+    });
   }
 
 
-  onSubmit(form: NgForm): void {
-    if (!form.valid) {
-      return;
+  onSubmit(): void {
+    this.authService.login(this.form.email.value, this.form.password.value)
+      .subscribe(
+        data => {
+          this.router.navigate(['/'])
+        },
+        error => {
+          this.handlingError(error);
+        });
+  }
+
+  handlingError(error: ErrorObject) {
+    switch (error.code) {
+      case 500: this.error = "Sikertelen azonosítás!";
+        break;
+      case 400: this.error = "Nincs ApplicantId";
+        break;
     }
-    this.authObs = this.authServie.login(form.value.email, form.value.password)
-    this.authObs.subscribe(
-      resData => {
-        this.router.navigate(['/']);
-      }, errorMessage => {
-        console.log("ajjaj")
-      }
-    )
+  }
+
+  get form() {
+    return this.signinForm.controls;
   }
 }
